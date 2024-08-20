@@ -3,4 +3,8 @@
 @tailwind utilities;
 @tailwind base;
 @tailwind components;
-
+/* 
+body {
+  @apply bg-cover bg-center h-screen w-screen bg-fixed  ;
+  background-image: url('./assets/images/alumni.jpeg');
+} */
