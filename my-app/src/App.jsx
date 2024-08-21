@@ -1,7 +1,9 @@
 import Navbar from "./components/Navbar"
 import Home from "./components/Home"
-import Blog from "./components/About"
 import About from "./components/About"
+import History from "./components/History"
+import Activities from "./components/Activities"
+import Team from "./components/Team"
 
 
 
@@ -11,9 +13,9 @@ function App() {
     <Navbar></Navbar>
     <Home></Home>
     <About></About>
-   
- 
-    
+    <History></History>
+    <Activities></Activities>
+    <Team></Team>
    </div>
   )
 }

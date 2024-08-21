@@ -1,15 +1,16 @@
 import React from "react";
 import Button from "./Button";
 import team from "../assets/images/ss.jpeg";
+import Mission from "./Mission";
 
 function About() {
   return (
     
-     <div className=" bg-gray-700 ml-6 mr-6 px-4 py-10 z-40 rounded-lg"> 
-       <h1 className="text-white font-bold text-center"> ABOUT US</h1>
-      <div className="flex md:justify-between flex-col-reverse items-center md:flex-row  mt-6">
+     <div className=" bg-white ml-6 mr-6 px-4 py-10 z-40 rounded-t-lg"> 
+       <h1 className="font-bold text-black text-center text-3xl pb-6"> ABOUT US</h1>
+      <div className="flex md:justify-between flex-col-reverse items-center md:flex-row mt-6  pb-6">
         <div className="px-6">
-          <p className="text-white mt-10">
+          <p className="text-black mt-10">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
             Doloremque repellat consectetur incidunt. In, nihil debitis.
             <br />
@@ -25,7 +26,7 @@ function About() {
             <br />
             facere? Velit, molestias voluptatem delectus culpa corporis
           </p>
-          <p className="text-white mt-10">
+          <p className="text-black mt-10">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
             Doloremque repellat consectetur incidunt. In, nihil debitis.
             <br />
@@ -41,14 +42,11 @@ function About() {
             <br />
             facere? Velit, molestias voluptatem delectus culpa corporis
           </p>
-          <div className="mt-8 items-center">
-            <Button>LEARN MORE</Button>
-          </div>
         </div>
 
         <img src={team} alt="" className=" md:w-1/2 rounded-3xl object-cover w-full md:h-auto h-full" />
       </div>
-    
+      <Mission></Mission>
      </div>
   );
 }
