@@ -1,9 +1,19 @@
+import Navbar from "./components/Navbar"
+import Home from "./components/Home"
+import Blog from "./components/About"
+import About from "./components/About"
+
+
+
 function App() {
   return (
    <div>
-    <h1 className="text-4xl text-red-400 undeline text-center">
-      hello world
-    </h1>
+    <Navbar></Navbar>
+    <Home></Home>
+    <About></About>
+   
+ 
+    
    </div>
   )
 }
