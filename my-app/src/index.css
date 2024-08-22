@@ -5,5 +5,5 @@
 @tailwind components;
 
 body {
-  @apply bg-cover bg-center h-screen w-screen bg-fixed bg-[#AD9A9A];
+  @apply bg-cover bg-center h-screen w-screen bg-fixed ml-0 bg-[#AD9A9A];
 }
