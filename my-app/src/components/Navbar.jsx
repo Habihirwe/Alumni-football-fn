@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 
+
 function Navbar() {
     let Links=[
-        {name:"HOME",link:"/"},
-        {name:"ABOUT ",link:"/"},
-        {name:"HISTORY",link:"/"},
-        {name:"EVENTS",link:"/"},
-        {name:"TEAM",link:"/"}
-    ]
+      { name: "HOME", link: "/" },
+      { name: "ABOUT", link: "/about" },
+      { name: "HISTORY", link: "/history" },
+      { name: "EVENTS", link: "/activities" },
+      { name: "TEAM", link: "/team" }
+  ];
+
+  
     const [open,setOpen]=useState(false);
 
   return (
@@ -37,7 +40,7 @@ function Navbar() {
             }
             <div className='px-2'>
             <button className="bg-slate-500 px-4 py-2 font-bold text-white rounded  hover:bg-yellow-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 shadow-lg">
-              READ MORE
+              CONTACT US
             </button>
             </div>
            

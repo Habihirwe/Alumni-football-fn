@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import alumniImage from '../assets/images/alumni.jpeg';
 function Home() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/signup');
+  };
+
   return (
     <div
     className=" bg-fixed bg-cover bg-center h-screen w-screen flex items-center justify-center"
@@ -14,7 +21,7 @@ function Home() {
         We’re constantly trying to express ourselves and actualize our dreams. If you have <br/> the
         opportunity to play this game.
         </p>
-        <button className="bg-white text-black font-bold px-6 py-2 rounded-lg hover:bg-yellow-400 transition duration-300">
+        <button   onClick={handleButtonClick} className="bg-white text-black font-bold px-6 py-2 rounded-lg hover:bg-yellow-400 transition duration-300">
         CREATE ACCOUNT
         </button>
       </div>
