@@ -13,7 +13,7 @@ const Login = () => {
     const {  email, password} = formData;
     dispatch(loginUser({email,password})).then((action) => {
         if (loginUser.fulfilled.match(action)) {
-          navigate('/Activities'); 
+          navigate('/blog'); 
         };
       });
 

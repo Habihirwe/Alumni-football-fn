@@ -8,6 +8,8 @@ import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
+import Blog from "./components/Blog"
+import Post from "./components/Post"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 
@@ -25,6 +27,8 @@ function App() {
     <Route path="/login" element={<Login/>} />
     <Route path="/Contact" element={<Contact/>} />
     <Route path="/signup" element={<Signup/>} />
+    <Route path="/blog" element={<Blog/>} />
+    <Route path="/blog/:postId" element={<Post />} />
 
     </Routes>
     </BrowserRouter>
