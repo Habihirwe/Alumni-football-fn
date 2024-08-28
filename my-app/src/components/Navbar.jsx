@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 
+
 function Navbar() {
     let Links=[
-        {name:"HOME",link:"/"},
-        {name:"ABOUT ",link:"/"},
-        {name:"HISTORY",link:"/"},
-        {name:"EVENTS",link:"/"},
-        {name:"TEAM",link:"/"}
-    ]
+      { name: "HOME", link: "/" },
+      { name: "ABOUT", link: "/about" },
+      { name: "HISTORY", link: "/history" },
+      { name: "EVENTS", link: "/activities" },
+      { name: "TEAM", link: "/team" }
+  ];
+
+  
     const [open,setOpen]=useState(false);
 
   return (
@@ -28,7 +31,7 @@ function Navbar() {
         <ul className={`md:flex md:items-center md:pb-0 pb-10 absolute md:static bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 opacity-100' : 'top-[-490px] md:opacit'} md:opacity-100 opacity-0 overflow-hidden`}>
             {
              Links.map((link)=>(
-                <li  className='md:ml-8 text-xl md:my-0 my-7 font-bold'>
+                <li  key={link.name} className='md:ml-8 text-xl md:my-0 my-7 font-bold'>
                     <a href={link.link} className='text-white hover:text-yellow-300 duration-300'>{link.name}</a>
                 </li>
 
@@ -37,7 +40,7 @@ function Navbar() {
             }
             <div className='px-2'>
             <button className="bg-slate-500 px-4 py-2 font-bold text-white rounded  hover:bg-yellow-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 shadow-lg">
-              READ MORE
+              CONTACT US
             </button>
             </div>
            
