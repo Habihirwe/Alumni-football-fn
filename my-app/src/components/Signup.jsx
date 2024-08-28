@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { signupUser } from '../redux/signupSlice';
+import { useNavigate} from 'react-router-dom';
 
 const Signup = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -8,6 +14,10 @@ const Signup = () => {
     password: '',
     repeatPassword:'',
   });
+
+  const dispatch = useDispatch();
+  const { loading, error, user } = useSelector((state) => state.auth);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,17 +27,30 @@ const Signup = () => {
     });
   };
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted', formData);
-  };
+    const { firstname, lastname, email, password, repeatPassword } = formData;
+    
+    if (password !== repeatPassword) {
+      alert('Passwords do not match!');
+      return;
+    }
+    
+    dispatch(signupUser({ firstname, lastname, email, password,repeatPassword}))
+    .then((action) => {
+      if (signupUser.fulfilled.match(action)) {
+        navigate('/Login'); 
+      };
+    });
+};
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
         <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">firstName</label>
             <input
@@ -88,10 +111,10 @@ const Signup = () => {
             <label htmlFor="repeatPassword" className="block text-sm font-medium text-gray-700">repeatPassword</label>
             <input
             placeholder='repeat yor password'
-              type="repeatPassword"
-              id="repeatePassword"
+              type="password"
+              id="repeatPassword"
               name="repeatPassword"
-              value={formData.repeatePassword}
+              value={formData.repeatPassword}
               onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
@@ -100,11 +123,14 @@ const Signup = () => {
 
           <button
             type="submit"
+            disabled={loading}
             className="w-full px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Sign Up
           </button>
         </form>
+        {error && <p className="mt-4 text-red-500">{error}</p>}
+        {user && <p className="mt-4 text-green-500">Welcome, {user.email}!</p>}
       </div>
     </div>
   );

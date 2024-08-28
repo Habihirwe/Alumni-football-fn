@@ -7,6 +7,7 @@ import Team from "./components/Team"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import Signup from "./components/Signup"
+import Login from "./components/Login"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 
@@ -21,8 +22,10 @@ function App() {
     <Route path="/history" element={<History/>} />
     <Route path="/activities" element={<Activities/>} />
     <Route path="/team" element={<Team/>} />
-    <Route path="/contact" element={<Contact/>} />
+    <Route path="/login" element={<Login/>} />
+    <Route path="/Contact" element={<Contact/>} />
     <Route path="/signup" element={<Signup/>} />
+
     </Routes>
     </BrowserRouter>
 
