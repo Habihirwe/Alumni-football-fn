@@ -128,6 +128,7 @@ const Signup = () => {
           >
             Sign Up
           </button>
+          <p className='pt-2'>Already have an Account,<a className='text-blue-500' href="/login"> login</a></p>
         </form>
         {error && <p className="mt-4 text-red-500">{error}</p>}
         {user && <p className="mt-4 text-green-500">Welcome, {user.email}!</p>}

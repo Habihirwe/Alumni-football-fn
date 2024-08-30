@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../redux/blogSlice";
+import { deletePost } from "../redux/blogSlice";
 
 const BlogTable = () => {
   const navigate = useNavigate();
@@ -17,6 +18,12 @@ const BlogTable = () => {
   const handleButtonClick = () => {
     navigate("/addblog");
   };
+
+
+  const handleDelete = (postId) => {
+    dispatch(deletePost(postId));
+  };
+
   return (
     <div>
       <div className="p-6 rounded-lg flex justify-center mr-8">
@@ -50,7 +57,7 @@ const BlogTable = () => {
                   />
                 </td>
                 <td className="px-4 py-2">
-                  <button className="text-red-500 hover:text-red-700">
+                  <button onClick={() => handleDelete(post._id)} className="text-red-500 hover:text-red-700">
                     Delete
                   </button>
                 </td>

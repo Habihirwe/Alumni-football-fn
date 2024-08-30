@@ -20,7 +20,7 @@ const Sidebar = () => {
             <a href="/blogtable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Blogs</a>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
-            <a href="#" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Messages</a>
+            <a href="/messagetable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Messages</a>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
             <a href="#" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Comments</a>

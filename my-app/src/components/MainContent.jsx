@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../redux/blogSlice";
-
+import { getMessage } from '../redux/messageSlice';
+import { getUsers } from '../redux/signupSlice';
 
 const MainContent = () => {
     const navigate = useNavigate();
@@ -13,6 +14,21 @@ const MainContent = () => {
     useEffect(() => {
       dispatch(getPost());
     }, [dispatch]);
+
+    const {users}=useSelector((state)=>state.auth)
+    
+
+    useEffect(() => {
+        dispatch(getUsers());
+      }, [dispatch]);
+
+    const {messages}=useSelector((state)=>state.message)
+
+
+    useEffect(() => {
+        dispatch(getMessage());
+      }, [dispatch]);
+    
   return (
     <div className="flex-1 p-6 bg-gray-100">
       <h2 className="text-2xl font-bold mb-4">Overview</h2>
@@ -22,12 +38,12 @@ const MainContent = () => {
           <p className="text-2xl font-bold">{items.length}</p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold">Revenue</h3>
-          <p className="text-2xl font-bold">$5,678</p>
+          <h3 className="text-lg font-semibold">Messages</h3>
+          <p className="text-2xl font-bold">{messages.length}</p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold">Products</h3>
-          <p className="text-2xl font-bold">89</p>
+          <h3 className="text-lg font-semibold">Users</h3>
+          <p className="text-2xl font-bold">{users.length}</p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow">
           <h3 className="text-lg font-semibold">Orders</h3>
