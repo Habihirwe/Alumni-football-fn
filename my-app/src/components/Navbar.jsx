@@ -2,16 +2,20 @@ import React, { useState } from 'react'
 
 
 function Navbar() {
+  
     let Links=[
       { name: "HOME", link: "/" },
       { name: "ABOUT", link: "/about" },
       { name: "HISTORY", link: "/history" },
       { name: "EVENTS", link: "/activities" },
-      { name: "TEAM", link: "/team" }
+      { name: "TEAM", link: "/dashboard" }
   ];
 
   
     const [open,setOpen]=useState(false);
+    const handleButtonClick = () => {
+      navigate("/contact");
+    };
 
   return (
   <nav className='md:flex bg-black top-0 left-0 right-0 w-full'>
@@ -39,7 +43,7 @@ function Navbar() {
              ))
             }
             <div className='px-2'>
-            <button className="bg-slate-500 px-4 py-2 font-bold text-white rounded  hover:bg-yellow-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 shadow-lg">
+            <button onClick={handleButtonClick} className="bg-slate-500 px-4 py-2 font-bold text-white rounded  hover:bg-yellow-300  shadow-lg">
               CONTACT US
             </button>
             </div>

@@ -9,7 +9,12 @@ import Footer from "./components/Footer"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
 import Blog from "./components/Blog"
+import AddBlog from "./components/AddBlog"
 import Post from "./components/Post"
+import Dashboard from "./components/Dashboard"
+import UserTable from "./components/UserTable"
+import BlogTable from "./components/BlogTable"
+
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 
@@ -25,11 +30,15 @@ function App() {
     <Route path="/activities" element={<Activities/>} />
     <Route path="/team" element={<Team/>} />
     <Route path="/login" element={<Login/>} />
-    <Route path="/Contact" element={<Contact/>} />
+    <Route path="/contact" element={<Contact/>} />
     <Route path="/signup" element={<Signup/>} />
     <Route path="/blog" element={<Blog/>} />
     <Route path="/blog/:postId" element={<Post />} />
-
+    <Route path="/blog" element={<Blog/>} />
+    <Route path="/addblog" element={<AddBlog/>} />
+    <Route path="/dashboard" element={<Dashboard/>} />
+    <Route path="/usertable" element={<UserTable/>} />
+    <Route path="/blogtable" element={<BlogTable/>} />
     </Routes>
     </BrowserRouter>
 
