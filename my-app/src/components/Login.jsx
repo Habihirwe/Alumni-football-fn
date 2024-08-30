@@ -77,6 +77,7 @@ const Login = () => {
           >
             Log In
           </button>
+          <p className='pt-2'>Don't have an Account,<a className='text-blue-500' href="/signup"> Sign up</a></p>
         </form>
         {error && <p className="mt-4 text-red-500">{error}</p>}
         {user && <p className="mt-4 text-green-500">Welcome, {user.email}!</p>}
