@@ -2,16 +2,16 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getPost = createAsyncThunk("blog/getPost", async (_, thunkAPI) => {
     try {
-      const token = localStorage.getItem('authToken');
-      if (!token) {
-        throw new Error('No token found, please log in first.');
-      }
+      // const token = localStorage.getItem('authToken');
+      // if (!token) {
+      //   throw new Error('No token found, please log in first.');
+      // }
   
       const response = await fetch("http://localhost:8001/api/getblogs", {
         method: "GET",
         headers: {
           "Content-Type": "application/json", 
-          'Authorization': `Bearer ${token}`,
+          // 'Authorization': `Bearer ${token}`,
         },
       });
   
@@ -35,16 +35,16 @@ export const getPost = createAsyncThunk("blog/getPost", async (_, thunkAPI) => {
 
   export const getsinglePost = createAsyncThunk("blog/getsinglePost", async (postId,thunkAPI) => {
     try {
-      const token = localStorage.getItem('authToken');
-      if (!token) {
-        throw new Error('No token found, please log in first.');
-      }
+      // const token = localStorage.getItem('authToken');
+      // if (!token) {
+      //   throw new Error('No token found, please log in first.');
+      // }
   
       const response = await fetch(`http://localhost:8001/api/blog/${postId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json", 
-          'Authorization': `Bearer ${token}`,
+          // 'Authorization': `Bearer ${token}`,
         },
       });
   

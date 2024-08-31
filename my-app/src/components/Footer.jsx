@@ -42,7 +42,7 @@ const Footer = () => {
         <li className="mx-2">
           <a
             className="text-white text-lg transition-opacity hover:opacity-100 opacity-75"
-            href="#"
+            href="/"
           >
             Home
           </a>
@@ -50,7 +50,7 @@ const Footer = () => {
         <li className="mx-2">
           <a
             className="text-white text-lg transition-opacity hover:opacity-100 opacity-75"
-            href="#"
+            href="/about"
           >
             About
           </a>
@@ -58,15 +58,15 @@ const Footer = () => {
         <li className="mx-2">
           <a
             className="text-white text-lg transition-opacity hover:opacity-100 opacity-75"
-            href="#"
+            href="/blog"
           >
-            Events
+            Blogs
           </a>
         </li>
         <li className="mx-2">
           <a
             className="text-white text-lg transition-opacity hover:opacity-100 opacity-75"
-            href="#"
+            href="/team"
           >
             Team
           </a>
@@ -74,7 +74,7 @@ const Footer = () => {
         <li className="mx-2">
           <a
             className="text-white text-lg transition-opacity hover:opacity-100 opacity-75"
-            href="#"
+            href="/contact"
           >
             Contact
           </a>

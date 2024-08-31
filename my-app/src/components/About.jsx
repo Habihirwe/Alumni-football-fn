@@ -6,7 +6,7 @@ import Mission from "./Mission";
 function About() {
   return (
     
-     <div className=" bg-white ml-6 mr-6 px-4 py-10 z-40 rounded-t-lg"> 
+     <div className=" bg-white ml-6 mr-6 px-4 py-10  rounded-t-lg"> 
        <h1 className="font-bold text-black text-center text-3xl pb-6"> ABOUT US</h1>
       <div className="flex md:justify-between flex-col-reverse items-center md:flex-row mt-6  pb-6">
         <div className="px-6">
