@@ -17,10 +17,10 @@ const Sidebar = () => {
           <NavLink to="/dashboard/usertable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Users</NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
-            <a href="/blogtable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Blogs</a>
+            <a href="/dashboard/blogtable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Blogs</a>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
-            <a href="/messagetable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Messages</a>
+            <a href="/dashboard/messagetable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Messages</a>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
             <a href="#" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Comments</a>
