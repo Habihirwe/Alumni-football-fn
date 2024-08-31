@@ -36,13 +36,13 @@ function Post() {
   }
 
   return (
-    <div className="mx-auto ml-6 mr-6 py-10 px-4 z-40 bg-white">
+    <div className="mx-auto  z-40 bg-white">
       <h1 className="font-bold text-black text-center text-3xl pb-6">
         {singleItem.title}
       </h1>
       <div className="rounded overflow-hidden shadow-lg items-center py-6">
         <img
-          className="w-full h-[500px] object-cover transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-1000 rounded-lg"
+          className="w-full h-[500px] object-cover transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-1000 rounded-lg"
           src={singleItem?.image}
           alt={singleItem?.title}
         />
@@ -50,10 +50,21 @@ function Post() {
           <div className="font-bold text-xl mb-2">{singleItem?.title}</div>
           <p className="text-gray-400 text-base">{singleItem?.content}</p>
         </div>
-        <div onClick={handleButtonClick} className="flex justify-center px-6 pt-4 pb-2 items-center">
-          <Button>READ MORE</Button>
-        </div>
       </div>
+
+      <form action="" className="pt-6 pb-4">
+        <div>
+          <h1 className="font-bold text-lg pb-2">LEAVE A COMMENT</h1>
+          <textarea name="" rows={3} id="" className="min-w-full border-2 border-gray-300 shadow-xl focus:border-none"></textarea>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-[200px] px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Post Comment
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

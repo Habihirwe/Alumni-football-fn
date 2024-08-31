@@ -42,6 +42,7 @@ const BlogTable = () => {
             <tr className="w-full bg-yellow-50 text-left text-black">
               <th className="px-3 py-2"> BLOG TITLE</th>
               <th className="px-3 py-2">IMAGE POSTED</th>
+              <th className="px-3 py-2">COMMENTS</th>
               <th className="px-3 py-2">DELETE</th>
               <th className="px-3 py-2">EDIT</th>
             </tr>
@@ -56,6 +57,7 @@ const BlogTable = () => {
                     className="h-10 w-10 rounded-full object-cover"
                   />
                 </td>
+                <td className="px-3 py-2">{post.comments.length}</td>
                 <td className="px-4 py-2">
                   <button onClick={() => handleDelete(post._id)} className="text-red-500 hover:text-red-700">
                     Delete

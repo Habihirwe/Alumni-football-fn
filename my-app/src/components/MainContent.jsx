@@ -45,10 +45,6 @@ const MainContent = () => {
           <h3 className="text-lg font-semibold">Users</h3>
           <p className="text-2xl font-bold">{users.length}</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold">Orders</h3>
-          <p className="text-2xl font-bold">456</p>
-        </div>
       </div>
     </div>
   );
