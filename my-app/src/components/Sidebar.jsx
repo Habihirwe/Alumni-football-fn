@@ -11,10 +11,10 @@ const Sidebar = () => {
         <ul>
           <li className="px-4 py-2 hover:bg-gray-700">
 
-          <NavLink to="/" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Overview</NavLink>
+          <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Overview</NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
-          <NavLink to="/usertable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Users</NavLink>
+          <NavLink to="/dashboard/usertable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Users</NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
             <a href="/blogtable" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Blogs</a>

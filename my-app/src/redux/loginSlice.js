@@ -4,7 +4,7 @@ export const loginUser = createAsyncThunk(
   "Auth/loginUser",
   async (userData, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:8001/api/login", {
+      const response = await fetch("https://alumni-football-bn.onrender.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/form-data",

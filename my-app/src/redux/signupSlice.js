@@ -7,7 +7,7 @@ export const signupUser = createAsyncThunk(
   async (userData, thunkAPI) => {
 
     try {
-      const response = await fetch('http://localhost:8001/api/signup', {
+      const response = await fetch('https://alumni-football-bn.onrender.com/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': "application/form-data",
@@ -34,7 +34,7 @@ export const getUsers = createAsyncThunk("auth/getUsers", async (_, thunkAPI) =>
       throw new Error('No token found, please log in first.');
     }
 
-    const response = await fetch("http://localhost:8001/api/getAllUsers", {
+    const response = await fetch("https://alumni-football-bn.onrender.com/api/getAllUsers", {
       method: "GET",
       headers: {
         "Content-Type": "application/json", 
@@ -66,7 +66,7 @@ export const deleteuser = createAsyncThunk("message/deleteMessage", async (userI
       throw new Error('No token found, please log in first.');
     }
 
-    const response = await fetch(`http://localhost:8001/api/deleteuser/${userID}`, {
+    const response = await fetch(`https://alumni-football-bn.onrender.com/api/deleteuser/${userID}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json", 

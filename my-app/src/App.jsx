@@ -17,6 +17,7 @@ import BlogTable from "./components/BlogTable"
 import MessageTable from "./components/MessageTable"
 
 import {BrowserRouter,Routes,Route} from "react-router-dom"
+import MainContent from "./components/MainContent"
 
 
 function App() {
@@ -37,10 +38,13 @@ function App() {
     <Route path="/blog/:postId" element={<Post />} />
     <Route path="/blog" element={<Blog/>} />
     <Route path="/addblog" element={<AddBlog/>} />
-    <Route path="/dashboard" element={<Dashboard/>} />
-    <Route path="/usertable" element={<UserTable/>} />
-    <Route path="/blogtable" element={<BlogTable/>} />
-    <Route path="/messagetable" element={<MessageTable/>} />
+    <Route path="/dashboard" element={<Dashboard/>} >
+    <Route path="usertable" element={<UserTable/>} />
+    <Route path="blogtable" element={<BlogTable/>} />
+    <Route path="" element={<MainContent/>} />
+    <Route path="messagetable" element={<MessageTable/>} />
+    </Route>
+   
 
     </Routes>
     </BrowserRouter>

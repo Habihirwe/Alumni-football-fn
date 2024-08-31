@@ -3,7 +3,7 @@ import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 export const createMessage= createAsyncThunk("message/createMessage",
     async(userData,thunkAPI)=>{
     try {
-        const response = await fetch('http://localhost:8001/api/createMessage', {
+        const response = await fetch('https://alumni-football-bn.onrender.com/api/createMessage', {
           method: 'POST',
           headers: {
             'Content-Type': "application/form-data",
@@ -30,7 +30,7 @@ export const getMessage= createAsyncThunk("message/getMessage",
               throw new Error('No token found, please log in first.');
             }
         
-            const response = await fetch(`http://localhost:8001/api/getmessage`, {
+            const response = await fetch(`https://alumni-football-bn.onrender.com/api/getmessage`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json", 
@@ -62,7 +62,7 @@ export const deleteMessage = createAsyncThunk("message/deleteMessage", async (me
         throw new Error('No token found, please log in first.');
       }
   
-      const response = await fetch(`http://localhost:8001/api/deletemessage/${messageID}`, {
+      const response = await fetch(`https://alumni-football-bn.onrender.com/api/deletemessage/${messageID}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json", 
