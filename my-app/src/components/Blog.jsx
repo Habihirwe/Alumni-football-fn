@@ -25,12 +25,12 @@ function Blog() {
       <div>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
-        <div className="md:columns-3  columns-1 items-center">
+        <div className="grid md:grid-cols-3 grid-cols-1 items-center">
           {Array.isArray(items) && items.length > 0 ? (
             items.map((post) => (
               <div
                 key={post._id}
-                className="max-w-sm  h-[450px] overflow-hidden shadow-2xl bg-[#34495E] ml-6 mr-6 px-4 py-10 z-40  mb-6 rounded-lg  "
+                className="max-w-sm  h-[450px] overflow-hidden shadow-2xl bg-[#34495E]  ml-6 mr-6 px-4 py-10 z-40  mb-6 rounded-lg  "
               >
                 <Link to={`/blog/${post._id}`}>
                   <img
