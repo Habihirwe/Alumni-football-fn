@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch,useSelector } from "react-redux";
 import { createMessage } from "../redux/messageSlice";
 import { useNavigate } from "react-router-dom";
-
+import { showErrorMessage, showSuccessMessage } from "../utilis/toast";
 import {
   faUser,
   faEnvelope,
@@ -41,7 +41,10 @@ const dispatch= useDispatch()
     dispatch(createMessage({name, email, phoneNumber, content}))
     .then((action) => {
       if (createMessage.fulfilled.match(action)) {
+        showSuccessMessage("message sent successfully!!")
         navigate('/'); 
+      }else{
+        showErrorMessage(" make sure all field are filled!")
       };
     });
 };

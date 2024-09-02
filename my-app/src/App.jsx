@@ -15,8 +15,10 @@ import Dashboard from "./components/Dashboard"
 import UserTable from "./components/UserTable"
 import BlogTable from "./components/BlogTable"
 import MessageTable from "./components/MessageTable"
-
+import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 import {BrowserRouter,Routes,Route} from "react-router-dom"
+import 'react-toastify/dist/ReactToastify.css';
 import MainContent from "./components/MainContent"
 
 
@@ -24,6 +26,8 @@ function App() {
   return (
     <div>
     <Navbar />
+    <ToastContainer />
+    <Toaster position="top-right" />
     <BrowserRouter>
     <Routes>
     <Route path="/" element={<Home/>} />

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { creatPost } from "../redux/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { showErrorMessage, showSuccessMessage } from "../utilis/toast";
 
 const AddBlog = () => {
   const [formData, setFormData] = useState({
@@ -38,8 +39,10 @@ const AddBlog = () => {
     const { title, content, image } = formData;
     dispatch(creatPost({ title, content, image })).then((action) => {
       if (creatPost.fulfilled.match(action)) {
+        showSuccessMessage("blog added successfully")
         navigate("/blog");
       }
+      showErrorMessage("missing fieald, please fill all fields!")
     });
   };
 

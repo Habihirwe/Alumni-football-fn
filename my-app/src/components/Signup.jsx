@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signupUser } from '../redux/signupSlice';
 import { useNavigate} from 'react-router-dom';
+import { showErrorMessage, showSuccessMessage } from '../utilis/toast';
 
 const Signup = () => {
 
@@ -41,9 +42,14 @@ const Signup = () => {
     dispatch(signupUser({ firstname, lastname, email, password,repeatPassword}))
     .then((action) => {
       if (signupUser.fulfilled.match(action)) {
+        showSuccessMessage('signed up succesfull');
         navigate('/Login'); 
+      }else{
+        showErrorMessage("incorect credentials!")
       };
+     
     });
+   
 };
 
   return (

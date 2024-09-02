@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/loginSlice';
 import { useNavigate } from 'react-router-dom';
+import { showSuccessMessage,showErrorMessage } from '../utilis/toast';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -13,8 +14,12 @@ const Login = () => {
     const {  email, password} = formData;
     dispatch(loginUser({email,password})).then((action) => {
         if (loginUser.fulfilled.match(action)) {
+          showSuccessMessage('logged in succesfull');
           navigate('/blog'); 
-        };
+        }else{
+          showErrorMessage('incorrect credentials');
+        }
+        
       });
 
   }
