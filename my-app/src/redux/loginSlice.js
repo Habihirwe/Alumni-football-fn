@@ -26,6 +26,20 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+
+export const logoutUser = createAsyncThunk(
+  "Auth/logoutUser",
+  async (_, thunkAPI) => {
+    try {
+      localStorage.removeItem('authToken');
+      return { success: true };
+    } catch (error) {
+      return thunkAPI.rejectWithValue('Failed to log out');
+    }
+  }
+);
+
+
 const loginSlice = createSlice({
   name: "Auth",
   initialState: {
@@ -48,6 +62,18 @@ const loginSlice = createSlice({
         state.loading=false,
         state.error= action.payload
     })
+    .addCase(logoutUser.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
+    .addCase(logoutUser.fulfilled, (state) => {
+      state.loading = false;
+      state.user = null; 
+    })
+    .addCase(logoutUser.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload; 
+    });
   },
 });
 

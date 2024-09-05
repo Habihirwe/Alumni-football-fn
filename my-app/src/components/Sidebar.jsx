@@ -1,7 +1,25 @@
 import React from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { logoutUser } from '../redux/loginSlice';
+import { showSuccessMessage } from '../utilis/toast';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { loading, error, user } = useSelector((state) => state.Auth);
+
+  const handleLogout = () => {
+    dispatch(logoutUser()).then((action) => {
+      if (logoutUser.fulfilled.match(action)) {
+        showSuccessMessage('logged out succesfull');
+        navigate('/'); 
+      }
+      
+    });
+  };
+
   return (
     <div className="h-screen w-64 bg-gray-800 text-white">
       <div className="p-4">
@@ -26,7 +44,7 @@ const Sidebar = () => {
             <a href="#" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Comments</a>
           </li>
           <li className="px-4 py-2 hover:bg-gray-700">
-            <a href="#" className={({ isActive }) => isActive ? 'bg-gray-700' : ''}>Settings</a>
+            <a href="#" className={({ isActive }) => isActive ? 'bg-gray-700' : ''} onClick={handleLogout}>Log out</a>
           </li>
         </ul>
       </nav>
