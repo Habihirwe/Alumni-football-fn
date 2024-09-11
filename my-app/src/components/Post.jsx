@@ -52,7 +52,7 @@ function Post() {
         </div>
       </div>
 
-      <form action="" className="pt-6 pb-4">
+      <form action="" className="pt-6 pb-4 pl-4 pr-4">
         <div>
           <h1 className="font-bold text-lg pb-2">LEAVE A COMMENT</h1>
           <textarea name="" rows={3} id="" className="min-w-full border-2 border-gray-300 shadow-xl focus:border-none"></textarea>

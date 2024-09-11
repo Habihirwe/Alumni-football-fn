@@ -21,6 +21,8 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.css';
 import MainContent from "./components/MainContent"
 
+import Form from "./components/Form"
+
 
 function App() {
   return (
@@ -54,6 +56,7 @@ function App() {
     </BrowserRouter>
 
     <Footer/>
+    
   </div>
 
   )

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import bk from "../assets/images/bk.jpeg";
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const Links = [
@@ -46,14 +48,7 @@ function Navbar() {
             </li>
           ))}
 
-          {/* <div className="px-2">
-            <button
-
-              className="bg-slate-500 px-4 py-2 font-bold text-white rounded hover:bg-yellow-300 shadow-lg"
-            >
-              CONTACT US
-            </button>
-          </div> */}
+        <img src={bk} alt="" className='rounded-full ml-8 h-14 w-14 hidden' />
         </ul>
       </div>
     </nav>
