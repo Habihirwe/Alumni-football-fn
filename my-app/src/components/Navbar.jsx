@@ -4,12 +4,12 @@ import bk from "../assets/images/bk.jpeg";
 function Navbar() {
   const [open, setOpen] = useState(false);
   const Links = [
-    { name: 'HOME', link: '/' },
-    { name: 'ABOUT', link: '/about' },
-    { name: 'HISTORY', link: '/history' },
-    { name: 'BLOG', link: '/blog' },
-    { name: 'TEAM', link: '/team' },
-    { name: 'CONTACT US', link: '/contact' }
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'History', link: '/history' },
+    { name: 'Blog', link: '/blog' },
+    { name: 'Team', link: '/team' },
+    { name: 'Contact Us', link: '/contact' }
 
   ];
   return (
