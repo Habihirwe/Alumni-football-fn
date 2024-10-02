@@ -38,7 +38,7 @@ function LandingPage() {
     >
       <div className="p-10 rounded-lg text-center w-full md:w-1/2">
         <h1 className="text-4xl font-bold text-white mb-4">
-          Play with KIST Football Alumni
+          Play with KIST Alumni Football Club
         </h1>
         <p className="text-xl text-white mb-6">
           We’re constantly trying to express ourselves and actualize our dreams.
