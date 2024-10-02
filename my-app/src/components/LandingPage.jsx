@@ -24,8 +24,8 @@ function LandingPage() {
    
   ];
 
-  const totalMatches = 35;
-  const rougeWins = 11;
+  const totalMatches = 38;
+  const rougeWins = 12;
   const jauneWins = 13;
 
   return (
