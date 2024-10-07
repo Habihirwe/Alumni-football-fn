@@ -15,8 +15,8 @@ function LandingPage() {
     { id: 3, name: "Eric Haba ", team: "Rouge", score: 10 },
     { id: 4, name: "Simon ", team: "Rouge", score: 9 },
     { id: 5, name: "Ignance", team: "Jaune", score: 7 },
-    { id: 6, name: "Darling ", team: "Jaune", score: 6 },
-    { id: 7, name: "Feston ", team: "Rouge", score: 6 },
+    { id: 6, name: "Feston ", team: "Rouge", score: 7 },
+    { id: 7, name: "Darling ", team: "Jaune", score: 6 },
     { id: 8, name: "Aimable", team: "Rouge", score: 5 },
     { id: 9, name: "Bosco  ", team: "Jaune", score: 5 },
     { id: 10, name: "Kassim   ", team: "Jaune", score: 5 },
@@ -24,8 +24,8 @@ function LandingPage() {
    
   ];
 
-  const totalMatches = 38;
-  const rougeWins = 12;
+  const totalMatches = 39;
+  const rougeWins = 13;
   const jauneWins = 13;
 
   return (
